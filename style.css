@@ -11,3 +11,94 @@ padding: 20px;
 border-radius: 10px;
 display: inline-block;
 }
+
+/* Style for the search section */
+.search-section {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px; /* space between input and button */
+    flex-wrap: wrap; /* makes it responsive */
+}
+
+/* Style for the city input */
+#city-input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #ddd;
+    flex: 1; /* takes available space */
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#city-input:focus {
+    border-color: #4a90e2; /* highlight on focus */
+}
+
+/* Style for the search button */
+#search-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #4a90e2, #007aff); /* theme gradient */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#search-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05); /* subtle hover effect */
+}
+
+/* Style .error-message */
+.error-message {
+    background-color: #ffe6e6;   /* light red/pink background */
+    color: #b30000;              /* dark red text */
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-left: 6px solid #b30000; /* thick red border on the left */
+    margin-top: 15px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.error-icon {
+    font-size: 1.2rem;
+}
+
+.error-heading {
+    font-weight: bold;
+}
+
+.error-description {
+    flex: 1;
+}
+
+/* Style .error-message */
+.error-message {
+    background-color: #ffe6e6;   /* light red/pink background */
+    color: #b30000;              /* dark red text */
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-left: 6px solid #b30000; /* thick red border on the left */
+    margin-top: 15px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.error-icon {
+    font-size: 1.2rem;
+}
+
+.error-heading {
+    font-weight: bold;
+}
+
+.error-description {
+    flex: 1;
+}
