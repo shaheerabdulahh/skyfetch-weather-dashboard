@@ -1,104 +1,164 @@
+/* 🌈 Animated Gradient Background */
 body {
-text-align: center;
-font-family: Arial;
-background: linear-gradient(to right, purple, blue);
-color: white;
-padding: 50px;
-}
-#weather-container {
-background: rgba(255,255,255,0.2);
-padding: 20px;
-border-radius: 10px;
-display: inline-block;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #6dd5fa, #2980b9);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-/* Style for the search section */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 🏠 Title */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* 🔍 Search Section */
 .search-section {
     margin-bottom: 30px;
     display: flex;
-    gap: 15px; /* space between input and button */
-    flex-wrap: wrap; /* makes it responsive */
+    gap: 12px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Style for the city input */
-#city-input {
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: 2px solid #ddd;
-    flex: 1; /* takes available space */
+/* 📝 Input */
+#cityInput {
+    padding: 14px 20px;
+    border-radius: 50px;
+    border: none;
+    flex: 1;
     font-size: 1rem;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
-#city-input:focus {
-    border-color: #4a90e2; /* highlight on focus */
+#cityInput:focus {
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
 }
 
-/* Style for the search button */
-#search-btn {
-    padding: 12px 30px;
-    background: linear-gradient(135deg, #4a90e2, #007aff); /* theme gradient */
+/* 🔘 Button */
+#searchBtn {
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#search-btn:hover {
-    opacity: 0.9;
-    transform: scale(1.05); /* subtle hover effect */
-}
-
-/* Style .error-message */
-.error-message {
-    background-color: #ffe6e6;   /* light red/pink background */
-    color: #b30000;              /* dark red text */
-    padding: 12px 20px;
-    border-radius: 8px;
-    border-left: 6px solid #b30000; /* thick red border on the left */
-    margin-top: 15px;
     font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    transition: 0.3s ease;
 }
 
-.error-icon {
-    font-size: 1.2rem;
+#searchBtn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
 }
 
-.error-heading {
+#searchBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 🌦 Glass Weather Container */
+#weather-container {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    display: inline-block;
+    min-width: 300px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ⏳ Loading */
+.loading-container {
+    margin-top: 20px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px auto;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* ❌ Error */
+.error-message {
+    background: rgba(255,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
     font-weight: bold;
 }
 
-.error-description {
-    flex: 1;
+/* 📅 Forecast Section */
+.forecast-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.3);
 }
 
-/* Style .error-message */
-.error-message {
-    background-color: #ffe6e6;   /* light red/pink background */
-    color: #b30000;              /* dark red text */
-    padding: 12px 20px;
-    border-radius: 8px;
-    border-left: 6px solid #b30000; /* thick red border on the left */
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
     margin-top: 15px;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
-.error-icon {
-    font-size: 1.2rem;
+/* 🎴 Forecast Cards */
+.forecast-card {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
 
-.error-heading {
-    font-weight: bold;
+.forecast-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-.error-description {
-    flex: 1;
+/* 📱 Mobile Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .search-section {
+        flex-direction: column;
+    }
+
+    #searchBtn {
+        width: 100%;
+    }
+
+    .forecast-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
