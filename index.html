@@ -7,6 +7,18 @@
 </head>
 <body>
   <h1>SkyFetch Weather Dashboard</h1>
+
+  <div class="search-section">
+    <!-- Input field -->
+    <input 
+        type="text" 
+        id="city-input" 
+        placeholder="Enter city name..." 
+    />
+
+    <!-- Search button -->
+    <button id="search-btn">🔍 Search</button>
+</div>
   
   <div id="weather-container">
     <h2 id="city"></h2>
@@ -14,6 +26,9 @@
     <p id="description"></p>
     <img id="icon" alt="Weather icon">
   </div>
+
+  <div id="weather-display"></div>
+
   
   <!-- Axios Library -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
